@@ -8,12 +8,21 @@ print(random_word)
 letters = list(random_word)
 print(letters)
 
+#4 CREATE A PLACEHOLDER WITH THE LENGTH OF THE WORD
+word_length = len(random_word)
+placeholder = ""
+for position in range(word_length):
+    placeholder += "_"
+print(placeholder)
+
 #2 USER INPUTS A GUESSED LETTER
 guess = input("Guess a letter: ")
 
-#3 IF THE LETTER IS IN THE WORD, PRINT TRUE / WRONG
+# 3 IF THE LETTER IS IN THE WORD, THE LETTER THERE
+display = ""
 for letter in letters:
     if guess == letter:
-        print("True")
+        display += letter
     else:
-        print("Wrong")
+        display += "_"
+print(display)
