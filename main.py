@@ -16,13 +16,23 @@ for position in range(word_length):
 print(placeholder)
 
 #2 USER INPUTS A GUESSED LETTER
-guess = input("Guess a letter: ")
+gameover = False
+correct_letter = []
 
-# 3 IF THE LETTER IS IN THE WORD, THE LETTER THERE
-display = ""
-for letter in letters:
-    if guess == letter:
-        display += letter
-    else:
-        display += "_"
-print(display)
+while not gameover:
+    guess = input("Guess a letter: ")
+
+    display = ""
+    for letter in letters:
+        if guess == letter:
+            display += letter
+            correct_letter.append(letter)
+        elif letter in correct_letter:
+            display += letter
+        else:
+            display += "_"
+    print(display)
+
+if "_" not in display:
+    gameover = True
+    print("You won!")
